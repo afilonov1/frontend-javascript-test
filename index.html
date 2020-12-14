@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+
+
+	<input class="input search" type="search" placeholder="Что найти?">
+	<button class="btn btn-finder">Найти на странице</button>
+
+	<button class="btn open-form" type="submit">Добавить</button>
+	<form class="form display-none" action="#">
+		<button class="btn add-form disabled" type="submit" disabled>Добавить в таблицу</button>
+		<input class="input form-input" type="text" placeholder="id" pattern="^[ 0-9]+$">
+		<input class="input form-input" type="text" placeholder="firstName">
+		<input class="input form-input" type="text" placeholder="lastName">
+		<input class="input form-input" type="text" placeholder="email">
+		<input class="input form-input" type="text" placeholder="phone">
+		<input class="input form-input" type="text" placeholder="streetAddress">
+		<input class="input form-input" type="text" placeholder="city">
+		<input class="input form-input" type="text" placeholder="state">
+		<input class="input form-input" type="text" placeholder="zip" pattern="^[ 0-9]+$">
+		<input class="input form-input" type="text" placeholder="description">
+	</form>
+	<div class="table">
+		<div class="table-row">
+			<div class="table-heading table-col">
+				<p>id</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>firstName</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>lastName</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>email</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>phone</p>
+			</div>
+
+			<div class="table-heading table-col">
+				<p>streetAddress</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>city</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>state</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>zip</p>
+			</div>
+			<div class="table-heading table-col">
+				<p>description</p>
+			</div>
+		</div>
+	</div>
+	<div class="btn-wrapper">
+		<div class="btn-mas btn-first__mas">Загрузить [короткий массив]<br>
+			32 объекта</div>
+		<div class="btn-mas btn-second__mas">Загрузить [длинный массив]<br>
+			1000 объектов</div>
+	</div>
+	<div class="loader display-none">loading...</div>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<script src="app.js">
+
+	</script>
+	<script>
+
+	</script>
+</body>
+
+</html>

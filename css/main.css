@@ -1,0 +1,159 @@
+html {
+	background-color: #ccc;
+}
+
+.table {
+	border-collapse: collapse;
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.table-heading:hover {
+	cursor: pointer;
+}
+
+.table-heading:last-child {
+	width: 620px;
+}
+
+.table-row {
+	display: table-row;
+	transition: 0.1s;
+}
+
+.table-col {
+	box-sizing: border-box;
+	padding: 10px;
+	padding-top: 10px;
+	/* line-height: 50px; */
+	display: table-cell;
+	width: 100px;
+	height: 30px;
+	border: 1px dashed #000;
+}
+
+form {
+	display: flex;
+	justify-content: space-between;
+}
+
+.input {
+	width: 150px;
+	height: 17px;
+	box-sizing: border-box;
+}
+
+.input,
+.btn {
+	outline: none;
+	border: none;
+
+}
+
+.input:hover,
+.btn:hover {
+	background-color: lightblue;
+}
+
+.btn {
+	margin-bottom: 20px;
+}
+
+.finder {
+	margin-top: 15px;
+	margin-left: 5px;
+}
+
+.display-none {
+	display: none !important;
+}
+
+.pag-item {
+	list-style-type: none;
+	border: 1px solid #000;
+	padding: 20px;
+	display: inline-block;
+	transition: 0.1s;
+}
+
+.pag-item:hover {
+	/* border-color: aquamarine;
+	color: aquamarine; */
+	background-color: aquamarine;
+	cursor: pointer;
+}
+
+.pag-item:not(:last-child) {
+	margin-right: 5px;
+}
+
+.pag-current {
+	background-color: pink;
+}
+
+.additional-info {}
+
+.additional-textarea {
+	background-color: lightblue;
+	width: 400px;
+	height: 150px;
+	outline: none;
+}
+
+.table-row:not(:first-child):hover {
+	background-color: pink;
+}
+
+.table-row:first-child:hover {
+	background-color: rgb(221, 199, 203);
+}
+
+.btn-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 200px;
+}
+
+.btn-mas {
+	background-color: #fff;
+	width: 350px;
+	height: 200px;
+	transition: .4s;
+	text-align: center;
+	line-height: 100px;
+}
+
+.btn-mas:first-child {
+	margin-right: 100px;
+}
+
+.btn-mas:hover {
+	transform: scale(1.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+
+}
+
+.loader {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background-color: pink;
+	border-radius: 50%;
+	animation: load 1s linear infinite alternate;
+	position: absolute;
+	top: 50%;
+	left: 47%;
+}
+
+@keyframes load {
+	0% {
+		background-color: pink;
+	}
+
+	100% {
+		background-color: orange;
+	}
+}
