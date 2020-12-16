@@ -37,7 +37,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			await getData(requestUrlMini);
 			loader.classList.toggle('display-none');
 			resolve();
-		};
+		}
 		// клик на правую кнопку загрузит длинный массив
 		secondBtn.onclick = async function () {
 			// убираем кнопки, добавляем Картику загрузки до окончания загрузки массива
@@ -46,7 +46,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			await getData(requestUrlBig);
 			loader.classList.toggle('display-none');
 			resolve();
-		};
+		}
 	})
 	// смотрим сколько строк таблицы на загруженной странице
 	.then (itemsOnPageFunc)
@@ -86,7 +86,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 	let tableHeading = tab.querySelectorAll('.table-heading');
 	for (let i = 0; i < tableHeading.length; i++) {
 		createArrow(i);
-	};
+	}
 
 
 
@@ -99,7 +99,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 		const response = await fetch(url);
 		data = await response.json();
 		console.timeEnd('123');
-	};
+	}
 	
 
 
@@ -113,7 +113,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			cell.classList.add('table-col');
 			cell.textContent = text;
 			parent.append(cell);
-		};
+		}
 
 
 		/**
@@ -123,7 +123,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			let row = document.createElement('div');
 			row.classList.add('table-row');
 			return row;
-		};
+		}
 
 
 		/**
@@ -131,7 +131,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 		 */
 		function pagesCount() {
 			return Math.ceil(data.length / 50);
-		};
+		}
 
 		// 
 		/**
@@ -146,14 +146,14 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					if (or === 'address') {
 						for (let adr in data[i][or]) {
 							createCell(data[i][or][adr], row);
-						};
+						}
 					} else {
 						createCell(data[i][or], row);
-					};
-				};
+					}
+				}
 				tab.append(row);
-			};
-		};
+			}
+		}
 		
 		/**
 		 * Смотрит сколько элементов массива будет размещено на странице
@@ -168,8 +168,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			}
 			else {
 				itemsOnPage = data.length % 50;
-			};
-		};
+			}
+		}
 
 
 		
@@ -181,8 +181,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 		function deleteTable() {
 			for (let i = 1; i <= itemsOnPage; i++) {
 				tab.children[1].remove();
-			};
-		};
+			}
+		}
 
 		// с
 		/**
@@ -197,10 +197,10 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 				pagPage.classList.add('pag-item');
 				if (i === 1) {
 					pagPage.classList.add('pag-current');
-				};
+				}
 				pagPage.textContent = i;
 				pagWrapper.append(pagPage);
-			};
+			}
 			tab.after(pagWrapper);
 		};
 
@@ -213,7 +213,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			pagination.children[currentPage - 1].classList.remove('pag-current');
 			currentPage = newPage;
 			pagination.children[currentPage - 1].classList.add('pag-current');
-		};
+		}
 
 
 
@@ -231,8 +231,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					// на новой странице опускаем все стрелки
 					changeArrowToDown();
 				};
-			};
-		};
+			}
+		}
 
 
 
@@ -246,10 +246,10 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			for (let k = 1; k < tab.children.length - 1; k++) {
 				if ((Number(tab.children[k].children[j].textContent) > Number(tab.children[k + 1].children[j].textContent)) || ((tab.children[k].children[j].textContent > tab.children[k + 1].children[j].textContent) && (isNaN(Number(tab.children[k].children[j].textContent))))) {
 					return -1;
-				};
-			};
+				}
+			}
 			return 1;
-		};
+		}
 
 
 		/**
@@ -260,10 +260,10 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			for (let k = 1; k < tab.children.length - 1; k++) {
 				if ((Number(tab.children[k].children[j].textContent) < Number(tab.children[k + 1].children[j].textContent)) || ((tab.children[k].children[j].textContent < tab.children[k + 1].children[j].textContent) && (isNaN(Number(tab.children[k].children[j].textContent))))) {
 					return -1;
-				};
-			};
+				}
+			}
 			return 1;
-		};
+		}
 
 
 		
@@ -281,7 +281,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			arrow.style.right = '10px';
 			arrow.style.top = '10px';
 			parent.append(arrow);
-		};
+		}
 
 
 
@@ -296,7 +296,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			let span = tab.children[firstItem];
 			tab.children[firstItem].remove();
 			tab.children[firstItem].after(span);
-		};
+		}
 
 
 
@@ -318,7 +318,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					}
 				}
 			}
-		};
+		}
 
 		/**
 		 * Сортирует столбец по убыванию
@@ -330,13 +330,13 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					if (j === 0 || j === 8) {
 						if (Number(tab.children[k].children[j].textContent) < Number(tab.children[k + 1].children[j].textContent)) {
 							change(k);
-						};
+						}
 					} else if ((tab.children[k].children[j].textContent < tab.children[k + 1].children[j].textContent)) {
 						change(k);
-					};
-				};
-			};
-		};
+					}
+				}
+			}
+		}
 
 
 		let arrows = document.querySelectorAll('.arrow');
@@ -346,8 +346,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 		function changeArrowToDown() {
 			for (let i = 0; i < tableHeading.length; i++) {
 				arrows[i].textContent = '▼';
-			};
-		};
+			}
+		}
 
 
 		/**
@@ -367,13 +367,13 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					else {
 						sortUp(i);
 						arrows[i].textContent = '▲';
-					};
+					}
 					// добавляем кликер чтобы после сортировки "дополнительная информация" выводилась корректно
 					clicker();
 				};
 
-			};
-		};
+			}
+		}
 
 		/**
 		 * Проверяет заполнены ли все элементы формы
@@ -384,10 +384,10 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			for (let i = 0; i < mas.length; i++) {
 				if (!mas[i].value) {
 					return -1;
-				};
-			};
+				}
+			}
 			return 1;
-		};
+		}
 
 		
 
@@ -419,11 +419,11 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 							addForm.disabled = true;
 						} else {
 							addForm.disabled = false;
-						};
-					};
+						}
+					}
 				};
-			};
-		};
+			}
+		}
 		
 
 		/**
@@ -435,7 +435,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			let row = createRow();
 			for (let i = 0; i < tab.children[0].children.length; i++) {
 				createCell(formInput[i].value, row);	
-			};
+			}
 			tab.children[0].after(row);
 			// добавили кликкер чтобы после добавления элемента через форму на него можно было кликнуть и вывести на страницу
 			clicker();
@@ -455,10 +455,10 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 					};
 					if (j === tab.children[i].children.length - 1 && k === 0) {
 						tab.children[i].classList.add('display-none');
-					};
-				};
-			};
-		};
+					}
+				}
+			}
+		}
 
 		/**
 		 * Включает видимость скрытых рядов
@@ -467,8 +467,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			for (let i = 1; i < tab.children.length; i++) {
 				for (let j = 0; j < tab.children[i].children.length; j++) {
 					tab.children[i].classList.remove('display-none');
-				};
-			};
+				}
+			}
 		};
 
 		let searchInput = document.querySelector('.search');
@@ -493,8 +493,8 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 			let addInfo = document.querySelector('.additional-info');
 			if (addInfo != null) {
 				addInfo.remove();
-			};
-		};
+			}
+		}
 
 
 		/**
@@ -514,7 +514,7 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 				'Провинция / штат: <b>' + row.children[7].textContent + '</b><br>' +
 				'Индекс: <b>' + row.children[8].textContent + '</b>';
 			parent.after(additionalInfo);
-		};
+		}
 
 
 		/**
@@ -529,9 +529,9 @@ let requestUrlBig = 'http://www.filltext.com/?rows=1000&id=%7Bnumber%7C1000%7D&f
 						additionalCreate(tab.children[i], pagination);
 						window.scrollTo(0, document.body.scrollHeight);
 					};
-				};
-			};
-		};
+				}
+			}
+		}
 
 		
 
